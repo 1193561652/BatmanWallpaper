@@ -1,0 +1,1 @@
+ninja: error: '../../../../src/main/cpp/native-lib.cpp', needed by 'CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o', missing and no known rule to make it

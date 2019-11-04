@@ -1,0 +1,2 @@
+J:/BatmanWallpaper/BatmanWallpaper/app/.cxx/cmake/debug/x86/CMakeFiles/edit_cache.dir
+J:/BatmanWallpaper/BatmanWallpaper/app/.cxx/cmake/debug/x86/CMakeFiles/rebuild_cache.dir

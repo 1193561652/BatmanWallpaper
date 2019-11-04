@@ -1,0 +1,16 @@
+
+{
+	"buildFiles" : [ "J:/BatmanWallpaper/BatmanWallpaper/app/CMakeLists.txt" ],
+	"cleanCommands" : 
+	[
+		"D:\\androidsdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cmake\\debug\\x86 --target clean"
+	],
+	"toolchains" : 
+	{
+		"431055689" : 
+		{
+			"cCompilerExecutable" : "D:/androidsdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "D:/androidsdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

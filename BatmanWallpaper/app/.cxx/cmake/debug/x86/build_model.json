@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "J:\\BatmanWallpaper\\BatmanWallpaper",
+      "sdkFolder": "D:\\androidsdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\build\\intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app",
+      "makeFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\.cxx",
+      "cxxFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx",
+      "ndkFolder": "D:\\androidsdk\\ndk-bundle",
+      "ndkVersion": "19.0.5232133",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "debug",
+    "soFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\build\\intermediates\\cmake\\debug\\lib",
+    "objFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\build\\intermediates\\cmake\\debug\\obj",
+    "jsonFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cmake\\debug",
+    "gradleBuildOutputFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cxx\\debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86",
+  "abiPlatformVersion": 21,
+  "cxxBuildFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cmake\\debug\\x86",
+  "jsonFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cmake\\debug\\x86\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cxx\\debug\\x86",
+  "objFolder": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\build\\intermediates\\cmake\\debug\\obj\\x86",
+  "buildCommandFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cmake\\debug\\x86\\build_command.txt",
+  "buildOutputFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cmake\\debug\\x86\\build_output.txt",
+  "modelOutputFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cmake\\debug\\x86\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cxx\\debug\\x86\\CMakeLists.txt",
+    "toolchainWrapperFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cxx\\debug\\x86\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cxx\\debug\\x86\\build_generation_state.json",
+    "cacheKeyFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cxx\\debug\\x86\\compiler_cache_key.json",
+    "compilerCacheUseFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cxx\\debug\\x86\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cxx\\debug\\x86\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cxx\\debug\\x86\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cmake\\debug\\x86\\json_generation_record.json",
+  "compileCommandsJsonFile": "J:\\BatmanWallpaper\\BatmanWallpaper\\app\\.cxx\\cmake\\debug\\x86\\compile_commands.json"
+}

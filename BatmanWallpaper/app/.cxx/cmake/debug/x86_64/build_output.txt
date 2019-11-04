@@ -1,0 +1,3 @@
+-- Configuring done
+-- Generating done
+-- Build files have been written to: J:/BatmanWallpaper/BatmanWallpaper/app/.cxx/cmake/debug/x86_64
