@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Administrator/AndroidStudioProjects/BatmanWallpaper/app
+# Install script for directory: J:/BatmanWallpaper/BatmanWallpaper/app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Administrator/AndroidStudioProjects/BatmanWallpaper/app/.cxx/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "J:/BatmanWallpaper/BatmanWallpaper/app/.cxx/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

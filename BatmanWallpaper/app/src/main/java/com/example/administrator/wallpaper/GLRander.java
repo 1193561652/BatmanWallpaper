@@ -164,8 +164,11 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
                 } else if(needWorking.equals("error_call")) {
                     bindWorkingService();
                 }else {
-                    mWSState.getAndSet(WS_ERROR);
+                    //mWSState.getAndSet(WS_ERROR);
                 }
+            } else {
+                wsConnection = new WorkingServiceConnection(this);
+                bindWorkingService();
             }
             lastReqTime = gloabTime;
         }
@@ -240,12 +243,12 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
 
 
 
-    WorkingServiceConnection wsConnection = null;
+    WorkingServiceConnection wsConnection = new WorkingServiceConnection(this);;
     @SuppressLint("NewApi")
     private void bindWorkingService() {
-        if(wsConnection == null) {
-            wsConnection = new WorkingServiceConnection(this);
-        }
+//        if(wsConnection == null) {
+//            wsConnection = new WorkingServiceConnection(this);
+//        }
         Intent startIntent = new Intent();
         ComponentName componentName = new ComponentName("com.example.testlua", "com.example.testlua.WorkingService");
         startIntent.setComponent(componentName);
