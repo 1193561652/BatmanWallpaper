@@ -112,4 +112,15 @@ public class WorkingServiceConnection implements ServiceConnection {
             }
         }
     }
+
+    public boolean isAlive() {
+        if(reqInterface != null) {
+            try {
+                return reqInterface.isAlive();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }

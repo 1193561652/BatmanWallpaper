@@ -15,4 +15,5 @@ interface IReqWorkingAidlInterface {
      void unregsetRspCallback(in IRspWorkingAidlInterface callback);
      void tiggerReq();
      void setWorking(in String needWorking);
+     boolean isAlive();
 }

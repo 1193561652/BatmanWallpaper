@@ -117,35 +117,12 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
         }
     }
 
-    private long gloabTime = System.nanoTime();
-    private long lastReqTime = 0;
+    //private long gloabTime = System.nanoTime();
+    //帧率控制
     private long lastDraw = 0;
-    //private int fps = 30;
-    @Override
-    public void onDrawFrame(GL10 gl) {
-        gloabTime = System.nanoTime();
-//        if(gloabTime - lastReqTime >= (2L * 60L * 1000L * 1000L * 1000L)) {
-//            String needWorking = wsConnection.needWorking();
-//            if(needWorking.equals("true"))
-//                mNeedWorking = true;
-//            else
-//                mNeedWorking = false;
-//            lastReqTime = gloabTime;
-//        }
-
-//        if(lastDraw > gloabTime && lastDraw - gloabTime <= 20 * 1000 * 1000) {
-//            long dec = 20 * 1000 * 1000 - (lastDraw - gloabTime);
-//            for(; dec >= 1000 * 1000; dec -= 1000 * 1000) {
-//                try {
-//                    Thread.sleep(1);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//        lastDraw = gloabTime;
-
+    protected void fpsCtrl(long gloabTime) {
         long dec = gloabTime - lastDraw;
+        //每30ms一帧
         if(dec <= 1000L * 1000L * 30L) {
             try {
                 Thread.sleep(1000L * 1000L * 30L - dec);
@@ -153,7 +130,24 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
                 e.printStackTrace();
             }
         }
+        lastDraw = gloabTime;
+    }
 
+    //服务保证存活
+    protected void serviceAlive() {
+        if(wsConnection != null) {
+            if (!wsConnection.isAlive()) {
+                bindWorkingService();
+            }
+        } else {
+            wsConnection = new WorkingServiceConnection(this);
+            bindWorkingService();
+        }
+    }
+
+    //工作需求查询，5秒一次
+    private long lastReqTime = 0;
+    protected void reqNeedWorking(long gloabTime) {
         if(gloabTime - lastReqTime >= 5L * 1000L * 1000L * 1000L) {
             if(wsConnection != null) {
                 String needWorking = wsConnection.needWorking();
@@ -162,34 +156,37 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
                 } else if(needWorking.equals("false")) {
                     mWSState.getAndSet(WS_SAFE);
                 } else if(needWorking.equals("error_call")) {
-                    bindWorkingService();
+                    //bindWorkingService();
                 }else {
                     //mWSState.getAndSet(WS_ERROR);
                 }
-            } else {
-                wsConnection = new WorkingServiceConnection(this);
-                bindWorkingService();
             }
             lastReqTime = gloabTime;
         }
+    }
 
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        //glEnable(GL_DEPTH_TEST);
 
-//        long currTime = System.nanoTime();
-//        float x = (currTime - gloabTime) / 1000000000.0f;
-//        x *= 0.2f;
-//        if(x >= 1.0f)
-//            x = 0.0f;
-//
-//        //mytea.drawModel(perspMatrix, viewMatrix);
-//        float[] textureMatrix = new float[16];
-//        Matrix.setIdentityM(textureMatrix, 0);
-//        Matrix.translateM(textureMatrix, 0, x, 0.0f, 0.0f);
-//        plan.setTextureMatrix(textureMatrix);
+    //private int fps = 30;
+    @Override
+    public void onDrawFrame(GL10 gl) {
+        long gloabTime = System.nanoTime();
+
+        //workingervice检测存活
+        this.serviceAlive();
+
+        //工作需求查询
+        this.reqNeedWorking();
+
+        //帧率控制
+        this.fpsCtrl(gloabTime);
+
 
         int state = mWSState.get();
         plan.setBKImage(state);
+
+
+        //绘制
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         plan.drawModel(perspMatrix, viewMatrix);
 
