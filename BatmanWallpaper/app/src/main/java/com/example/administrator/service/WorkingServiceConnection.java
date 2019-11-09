@@ -6,8 +6,8 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-import com.example.testlua.IReqWorkingAidlInterface;
-import com.example.testlua.IRspWorkingAidlInterface;
+import com.example.batservice.IReqWorkingAidlInterface;
+import com.example.batservice.IRspWorkingAidlInterface;
 
 public class WorkingServiceConnection implements ServiceConnection {
     class RspWorkingCallback extends IRspWorkingAidlInterface.Stub {

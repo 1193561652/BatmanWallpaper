@@ -1,5 +1,5 @@
 // IRspWorkingAidlInterface.aidl
-package com.example.testlua;
+package com.example.batservice;
 
 // Declare any non-default types here with import statements
 

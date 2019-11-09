@@ -34,8 +34,8 @@ public class MainActivity extends Activity {
 
 
         Intent startIntent = new Intent();
-        //ComponentName componentName = new ComponentName("com.example.administrator.batmanwallpaper", "com.example.testlua.WorkingService");
-        ComponentName componentName = new ComponentName("com.example.testlua", "com.example.testlua.WorkingService");
+        //ComponentName componentName = new ComponentName("com.example.administrator.batmanwallpaper", "com.example.batservice.WorkingService");
+        ComponentName componentName = new ComponentName("com.example.batservice", "com.example.batservice.WorkingService");
         startIntent.setComponent(componentName);
         //getApplicationContext().startService(startIntent);
         boolean bSec = bindService(startIntent, wsConnection, BIND_AUTO_CREATE);

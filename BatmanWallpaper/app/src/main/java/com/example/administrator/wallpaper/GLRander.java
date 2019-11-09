@@ -175,10 +175,10 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
         this.serviceAlive();
 
         //工作需求查询
-        this.reqNeedWorking();
+        //this.reqNeedWorking();
 
         //帧率控制
-        this.fpsCtrl(gloabTime);
+        //this.fpsCtrl(gloabTime);
 
 
         int state = mWSState.get();
@@ -247,7 +247,7 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
 //            wsConnection = new WorkingServiceConnection(this);
 //        }
         Intent startIntent = new Intent();
-        ComponentName componentName = new ComponentName("com.example.testlua", "com.example.testlua.WorkingService");
+        ComponentName componentName = new ComponentName("com.example.batservice", "com.example.batservice.WorkingService");
         startIntent.setComponent(componentName);
         context.startForegroundService(startIntent);
         boolean bSec = context.bindService(startIntent, wsConnection, BIND_AUTO_CREATE);

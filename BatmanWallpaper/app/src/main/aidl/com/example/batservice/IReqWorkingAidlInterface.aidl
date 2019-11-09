@@ -1,6 +1,6 @@
 // IReqWorkingAidlInterface.aidl
-package com.example.testlua;
-import com.example.testlua.IRspWorkingAidlInterface;
+package com.example.batservice;
+import com.example.batservice.IRspWorkingAidlInterface;
 // Declare any non-default types here with import statements
 
 interface IReqWorkingAidlInterface {
