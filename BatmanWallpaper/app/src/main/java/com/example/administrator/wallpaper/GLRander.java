@@ -9,6 +9,7 @@ import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.os.Build;
 import android.os.Environment;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.MotionEvent;
 
@@ -123,12 +124,8 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
     protected void fpsCtrl(long gloabTime) {
         long dec = gloabTime - lastDraw;
         //每30ms一帧
-        if(dec <= 1000L * 1000L * 30L) {
-            try {
-                Thread.sleep(1000L * 1000L * 30L - dec);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        if(dec <= 1000L * 1000L * 20L) {
+            SystemClock.sleep((1000L * 1000L * 20L - dec) / 1000000L);
         }
         lastDraw = gloabTime;
     }
@@ -175,10 +172,10 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
         this.serviceAlive();
 
         //工作需求查询
-        //this.reqNeedWorking();
+        this.reqNeedWorking(gloabTime);
 
         //帧率控制
-        //this.fpsCtrl(gloabTime);
+        this.fpsCtrl(gloabTime);
 
 
         int state = mWSState.get();
@@ -191,22 +188,6 @@ public class GLRander implements GLSurfaceView.Renderer, GLTouchHandle, WorkingS
         plan.drawModel(perspMatrix, viewMatrix);
 
 
-//        testProgram.useProgram();
-//        testProgram.setUnifrom(perspMatrix, viewMatrix, textureId);
-//        testProgram.setAttribut(tea.getVerticeBuff(), tea.getNormalBuff(), tea.getTextureBuff());
-//        //glDrawArrays(GL_TRIANGLES, 0, 3);
-//
-////        ShortBuffer indexBuff = ShortBuffer.allocate(3).put(new short[] {
-////                1, 2, 3
-////        });
-//
-////        ByteBuffer indexBuff = ByteBuffer.allocate(3).put(new byte[] {
-////                1, 2, 3
-////        });
-//        //indexBuff.position(0);
-//        glDrawElements(GL_TRIANGLES, tea.getIndexCount(), GL_UNSIGNED_SHORT, tea.getIndexBuff());
-//        //glDrawElements(GL_LINE_STRIP, tea.getIndexCount(), GL_UNSIGNED_SHORT, tea.getIndexBuff());
-//        //glDrawElements(GL_LINE_STRIP, tea.getIndexCount(), GL_UNSIGNED_SHORT, tea.getIndexBuff());
     }
 
 

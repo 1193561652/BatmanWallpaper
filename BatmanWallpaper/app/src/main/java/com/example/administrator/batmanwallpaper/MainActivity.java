@@ -1,8 +1,10 @@
 package com.example.administrator.batmanwallpaper;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,20 +27,23 @@ public class MainActivity extends Activity {
     Button reqBtn = null;
     TextView textView = null;
     Switch switch1 = null;
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         PermissionHelper.requestReadExternalPermission(this);
-
+        PermissionHelper.requestWriteExternalPermission(this);
 
         Intent startIntent = new Intent();
         //ComponentName componentName = new ComponentName("com.example.administrator.batmanwallpaper", "com.example.batservice.WorkingService");
+        //ComponentName componentName = new ComponentName("com.example.batservice", "com.example.batservice.WorkingService");
         ComponentName componentName = new ComponentName("com.example.batservice", "com.example.batservice.WorkingService");
         startIntent.setComponent(componentName);
         //getApplicationContext().startService(startIntent);
-        boolean bSec = bindService(startIntent, wsConnection, BIND_AUTO_CREATE);
+        getApplicationContext().startForegroundService(startIntent);
+        boolean bSec = getApplicationContext().bindService(startIntent, wsConnection, BIND_AUTO_CREATE);
 
         reqBtn = (Button)findViewById(R.id.reqBtn);
         textView = (TextView)findViewById(R.id.textView);
@@ -69,12 +74,4 @@ public class MainActivity extends Activity {
     }
 
 
-
-
-
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    //public native String stringFromJNI();
 }

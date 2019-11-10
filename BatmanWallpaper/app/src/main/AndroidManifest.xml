@@ -39,18 +39,7 @@
                 android:resource="@xml/wallpaper"/>
         </service>
 
-<!--        <service-->
-<!--            android:name="com.example.administrator.service.WorkingService"-->
-<!--            android:label="WorkingService"-->
 
-<!--            android:exported="true"-->
-<!--            android:enabled="true"-->
-<!--            >-->
-<!--&lt;!&ndash;            android:process=":remoteProcess"&ndash;&gt;-->
-<!--            <intent-filter>-->
-<!--                <action android:name="com.example.administrator.service.WorkingService" />-->
-<!--            </intent-filter>-->
-<!--        </service>-->
     </application>
 
 </manifest>
